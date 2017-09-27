@@ -1,6 +1,6 @@
 Inspired in whossun/laravel-toastr.
 
-I cloned the repository brian2694/laravel-toastr to update to Laravel 5.4
+I cloned the repository brian2694/laravel-toastr to update to Laravel 5.5
 
 # laravel-toastr
 
@@ -10,6 +10,12 @@ I cloned the repository brian2694/laravel-toastr to update to Laravel 5.4
 Using Composer
 
     composer require brian2694/laravel-toastr
+
+### Laravel >= 5.5
+
+That's it! The package is auto-discovered on 5.5 and up!
+
+### Laravel <= 5.4
 
 Add the service provider to `config/app.php`
 

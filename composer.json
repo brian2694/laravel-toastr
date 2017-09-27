@@ -1,6 +1,6 @@
 {
     "name": "brian2694/laravel-toastr",
-    "description": "toastr.js for laravel 5.4",
+    "description": "toastr.js for laravel 5.5",
     "keywords": ["toastr", "notification", "laravel", "php"],
     "homepage": "https://github.com/brian2694/laravel-toastr",
     "license": "MIT",
@@ -17,6 +17,16 @@
         "files": [
             "src/helper.php"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Brian2694\\Toastr\\ToastrServiceProvider::class,"
+            ],
+            "aliases": {
+                "Toastr": "Brian2694\\Toastr\\Facades\\Toastr::class"
+            }
+        }
     },
     "minimum-stability": "dev",
     "require": {
