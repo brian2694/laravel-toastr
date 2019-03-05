@@ -2,13 +2,14 @@
 
 namespace Brian2694\Toastr;
 
-use Illuminate\Session\SessionManager as Session;
 use Illuminate\Config\Repository as Config;
+use Illuminate\Session\SessionManager as Session;
 
 class Toastr
 {
     /**
      * The session manager.
+     *
      * @var \Illuminate\Session\SessionManager
      */
     protected $session;
@@ -39,7 +40,7 @@ class Toastr
 
         if (! $messages) $messages = [];
 
-        $script = '<script type="text/javascript">';
+        $script = $this->config->get('toastr.script-tag');
 
         foreach ($messages as $message) {
            $config = (array) $this->config->get('toastr.options');
@@ -63,6 +64,7 @@ class Toastr
         }
 
         $script .= '</script>';
+
         return $script;
     }
 

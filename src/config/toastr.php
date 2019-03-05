@@ -1,6 +1,14 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Toastr
+    |--------------------------------------------------------------------------
+    |
+    | Here You Can Set Toastr's Configurations
+    |
+    */
     'options' => [
         "closeButton" => false,
         "debug" => false,
@@ -16,6 +24,16 @@ return [
         "showEasing" => "swing",
         "hideEasing" => "linear",
         "showMethod" => "fadeIn",
-        "hideMethod" => "fadeOut"
+        "hideMethod" => "fadeOut",
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Opening Script Tag
+    |--------------------------------------------------------------------------
+    |
+    | Here You Can Adjust The Opening <script> Tag
+    |
+    */
+    'script-tag' => '<script type="text/javascript">',
 ];
