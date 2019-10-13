@@ -52,7 +52,7 @@ class Toastr
                $script .= 'toastr.options = ' . json_encode($config) . ';';
            }
 
-           $title = $message['title'] ?: null;
+           $title = addslashes($message['title']) ?: null;
 
             $script .= 'toastr.' . $message['type'] .
                 '(\'' . addslashes($message['message']) .
