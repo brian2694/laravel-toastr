@@ -1,5 +1,6 @@
 {
     "name": "brian2694/laravel-toastr",
+    
     "description": "toastr.js for laravel 5.5",
     "keywords": ["toastr", "notification", "laravel", "php"],
     "homepage": "https://github.com/brian2694/laravel-toastr",
