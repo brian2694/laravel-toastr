@@ -1,4 +1,4 @@
-Inspired in whossun/laravel-toastr.
+Inspired in whossun/laravel-toastr..
 
 I cloned the repository brian2694/laravel-toastr to update to Laravel 5.5
 
