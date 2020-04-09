@@ -4,6 +4,7 @@ namespace Brian2694\Toastr;
 
 use Illuminate\Session\SessionManager as Session;
 use Illuminate\Config\Repository as Config;
+use Illuminate\Support\MessageBag;
 
 class Toastr
 {
