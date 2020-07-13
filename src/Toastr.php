@@ -4,6 +4,7 @@ namespace Brian2694\Toastr;
 
 use Illuminate\Session\SessionManager as Session;
 use Illuminate\Config\Repository as Config;
+use Illuminate\Support\MessageBag;
 
 class Toastr
 {
@@ -52,10 +53,10 @@ class Toastr
                $script .= 'toastr.options = ' . json_encode($config) . ';';
            }
 
-           $title = $message['title'] ?: null;
+           $title = addslashes($message['title']) ?: null;
 
             $script .= 'toastr.' . $message['type'] .
-                '(\'' . $message['message'] .
+                '(\'' . addslashes($message['message']) .
                 "','$title" .
                 '\');';
 
@@ -106,9 +107,21 @@ class Toastr
      */
     public function info($message, $title = null, $options = [])
     {
-        $this->add('info', $message, $title, $options);
-    }
+		if($message instanceof MessageBag)
+		{
+			$messageString = "";
+			foreach ($message->getMessages() as $messageArray)
+			{
+				foreach ($messageArray as $currentMessage)
+					$messageString .= $currentMessage."<br>";
+			}
 
+			$this->add('info', rtrim($messageString, "<br>"), $title, $options);
+		}
+		else
+			$this->add('info', $message, $title, $options);
+    }
+    
     /**
      * Add a success flash message to session.
      *
@@ -120,7 +133,19 @@ class Toastr
      */
     public function success($message, $title = null, $options = [])
     {
-        $this->add('success', $message, $title, $options);
+		if($message instanceof MessageBag)
+		{
+			$messageString = "";
+			foreach ($message->getMessages() as $messageArray)
+			{
+				foreach ($messageArray as $currentMessage)
+					$messageString .= $currentMessage."<br>";
+			}
+
+			$this->add('success', rtrim($messageString, "<br>"), $title, $options);
+		}
+		else
+			$this->add('success', $message, $title, $options);
     }
 
     /**
@@ -134,7 +159,19 @@ class Toastr
      */
     public function warning($message, $title = null, $options = [])
     {
-        $this->add('warning', $message, $title, $options);
+		if($message instanceof MessageBag)
+		{
+			$messageString = "";
+			foreach ($message->getMessages() as $messageArray)
+			{
+				foreach ($messageArray as $currentMessage)
+					$messageString .= $currentMessage."<br>";
+			}
+
+			$this->add('warning', rtrim($messageString, "<br>"), $title, $options);
+		}
+		else
+			$this->add('warning', $message, $title, $options);
     }
 
     /**
@@ -148,7 +185,19 @@ class Toastr
      */
     public function error($message, $title = null, $options = [])
     {
-        $this->add('error', $message, $title, $options);
+    	if($message instanceof MessageBag)
+		{
+			$messageString = "";
+			foreach ($message->getMessages() as $messageArray)
+			{
+				foreach ($messageArray as $currentMessage)
+					$messageString .= $currentMessage."<br>";
+			}
+
+			$this->add('error', rtrim($messageString, "<br>"), $title, $options);
+		}
+    	else
+        	$this->add('error', $message, $title, $options);
     }
 
     /**
