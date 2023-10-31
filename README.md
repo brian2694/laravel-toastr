@@ -108,4 +108,8 @@ You should add `{!! Toastr::message() !!}` to your html.
 
 
 
-### MIT
+## Contributors
+
+We'd like to thank the following individuals for their contributions to this project:
+
+- [Antonio Bruno](https://github.com/antonio8101) - Set DOC on the Facade class.
