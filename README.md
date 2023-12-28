@@ -106,6 +106,27 @@ You should add `{!! Toastr::message() !!}` to your html.
 </html>
 ```
 
+### Use ViteJs / script type defaults to module
+
+You can also set Toastr to use vitejs by default by registering `Toastr::useVite()` inside the `AppServiceProvider`.
+
+```php
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Brian2694\Toastr\Facades\Toastr;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        Toastr::useVite();
+    }
+}
+```
+
+Upon registering, you can now use `Toastr::message()` and it set the script type to module.
+
 
 
 ## Contributors
