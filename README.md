@@ -134,3 +134,4 @@ Upon registering, you can now use `Toastr::message()` and it set the script type
 We'd like to thank the following individuals for their contributions to this project:
 
 - [Antonio Bruno](https://github.com/antonio8101) - Set DOC on the Facade class.
+- [aoradev44](https://github.com/aoradev44) - Set toastr message script type to module for using with vite
