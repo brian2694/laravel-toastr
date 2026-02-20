@@ -6,6 +6,8 @@ I cloned the repository brian2694/laravel-toastr to update to Laravel 5.5
 
 | Laravel Version     | Is Working? |
 | ---      | ---       |
+| 12.x | Yes         |
+| 11.x | Yes         |
 | 10.x | Yes         |
 | 9.x | Yes         |
 | 8.x | Yes         |
